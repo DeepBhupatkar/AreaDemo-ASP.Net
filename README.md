@@ -1,2 +1,2 @@
 # AreaDemo-ASP.Net
-Area Demo With CRUD Operation with Search 
+ASP.NET Project With MVC. CRUD Operation and Search functionality
