@@ -1,0 +1,50 @@
+﻿@using DemoArea.Areas.LOC_City.Models;
+@using System.Data;
+@model LOC_CityModel;
+
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>City Edit Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Update City Details</h5>
+            <form class="row g-3" method="post" asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityUpdateFillFormData">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CountryID:</label>
+                    <input value="@ViewBag.CountryID" type="text" id="countryID" name="countryID" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StateID:</label>
+                    <input value="@ViewBag.StateID" type="text" id="stateID" name="stateID" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CityName:</label>
+                    <input value="@ViewBag.CityName" type="text" id="cityName" name="cityName" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CityCode:</label>
+                    <input value="@ViewBag.CityCode" type="text" id="cityCode" name="cityCode" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="hidden" value="@ViewBag.CityID" name="CityID" />
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>>

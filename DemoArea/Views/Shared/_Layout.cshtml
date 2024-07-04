@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Components / Alerts - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/img/favicon.png" rel="icon">
+    <link href="~/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: NiceAdmin
+    * Updated: Sep 18 2023 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="data:image/jpeg;base64,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" alt="">
+                <span class="d-none d-lg-block">Darshan University</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="LOC_CountryList">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                    <span>Country</span>
+                </a>
+            </li><!-- End Country Nav -->
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateList">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                    <span>State</span>
+                </a>
+            </li><!-- End State Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityList">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                    <span>City</span>
+                </a>
+            </li><!-- End City Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchList">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                    <span>Branch</span>
+                </a>
+            </li><!-- End Branch Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentList">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                    <span>Student</span>
+                </a>
+            </li><!-- End Student Nav -->
+
+
+            
+          
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+
+            @RenderBody()
+
+        </div><!-- End Page Title -->
+
+    </main>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Darshan University</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/vendor/chart.js/chart.umd.js"></script>
+    <script src="~/vendor/echarts/echarts.min.js"></script>
+    <script src="~/vendor/quill/quill.min.js"></script>
+    <script src="~/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+﻿@using DemoArea.Areas.LOC_Country.Models;
+@using DemoArea.Areas.LOC_Country;
+@using System.Data
+@model LOC_CountryModel
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>Country Add Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Insert Country Details</h5>
+            <form class="row g-3" method="post" asp-area="LOC_Country" asp-controller="LOC_Country" asp-action="LOC_CountryInsert">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CountryName:</label>
+                    <input type="text" id="countryName" name="countryName" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CountryCode:</label>
+                    <input type="text" id="countryCode" name="countryCode" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿@using DemoArea.Areas.LOC_State.Models;
+
+@using System.Data;
+@model LOC_StateModel;
+
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>State Add Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Insert State Details</h5>
+            <form class="row g-3" method="post" asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateAddFormPage">
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CountryID:</label>
+                    <input type="text" id="countryID" name="countryID"  class="form-control" required />
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StateName:</label>
+                    <input type="text" id="stateName" name="stateName" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StateCode:</label>
+                    <input type="text" id="stateCode" name="stateCode" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

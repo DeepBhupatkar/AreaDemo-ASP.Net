@@ -1,0 +1,92 @@
+﻿@using DemoArea.Areas.MST_Student.Models;
+@using System.Data;
+@model MST_StudentModel;
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>Student Add Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Insert Student Details</h5>
+
+            <!-- Multi Columns Form -->
+            <form class="row g-3" method="post" asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentAddFormPage">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">BranchID:</label>
+                    <input type="text" id="BranchID" name="BranchID" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CityID:</label>
+                    <input type="text" id="CityID" name="CityID" class="form-control" required />
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputName7" class="form-label">Student Name</label>
+                    <input type="text" id="studentName" name="studentName" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName8" class="form-label">Date of Birth</label>
+                    <input type="text" id="dob" name="dob" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputEmail9" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputPassword10" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputEmail11" class="form-label">Mobile No. Student</label>
+                    <input type="text" id="mobileNoStudent" name="mobileNoStudent" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputPassword12" class="form-label">Mobile No. Father</label>
+                    <input type="text" id="mobileNoFather" name="mobileNoFather" class="form-control" required>
+                </div>
+
+                <label>Address</label>
+                <div class="form-floating">
+                    <textarea class="form-control" id="address" name="address" style="height: 100px;" required></textarea>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputAge" class="form-label">Age</label>
+                    <input type="text" id="age" name="age" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputGender" class="form-label">Gender</label>
+                    <input type="text" id="gender" name="gender" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputActive" class="form-label">IsActive</label>
+                    <input type="text" id="isActive" name="isActive" class="form-control" required>
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+
+            </form><!-- End Multi Columns Form -->
+
+        </div>
+    </div>
+
+</body>
+</html>

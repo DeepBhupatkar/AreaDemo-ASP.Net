@@ -1,0 +1,97 @@
+﻿@using DemoArea.Areas.LOC_State.Models
+@using System.Data;
+@model DataTable;
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>State List Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Search State Details</h5>
+            <form class="row g-3" method="post" asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateSearch">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StateName:</label>
+                    <input type="text" id="stateName" name="stateName" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StateCode:</label>
+                    <input type="text" id="stateCode" name="stateCode" class="form-control" required>
+                </div>
+
+                <div>
+                    <input type="submit" value="Search State" class="btn btn-primary" />
+                    <a asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateList" class="btn btn-primary">Clear Filter</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between align-items-center">
+                State Details
+                <a asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateAdd" class="btn btn-success">Add New State</a>
+            </h5>
+
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">CountryID</th>
+                        <th scope="col">CountryName</th>
+                        <th scope="col">StateID</th>
+                        <th scope="col">StateName</th>
+                        <th scope="col">StateCode</th>
+                        <th scope="col">Created</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        if (Model.Rows.Count > 0)
+                        {
+                            foreach (DataRow dr in Model.Rows)
+                            {
+                                <tr>
+                                    <td>@dr["CountryID"]</td>
+                                    <td>@dr["CountryName"]</td>
+                                    <td>@dr["StateID"]</td>
+                                    <td>@dr["StateName"]</td>
+                                    <td>@dr["StateCode"]</td>
+                                    <td>@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
+                                    <td>
+                                        <a asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateEdit" asp-route-StateID="@dr["StateID"]" class="btn btn-primary">Edit</a>
+                                        <a asp-area="LOC_State" asp-controller="LOC_State" asp-action="LOC_StateDelete" asp-route-StateID="@dr["StateID"]" onclick="return checkDelete();" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="10" class="text-center">
+                                    <p class="col-form-label">No Records Found!</p>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+
+        </div>
+    </div>
+
+</body>
+</html>

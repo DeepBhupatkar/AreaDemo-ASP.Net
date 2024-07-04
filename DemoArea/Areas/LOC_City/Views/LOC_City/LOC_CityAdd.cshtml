@@ -1,0 +1,49 @@
+﻿@using DemoArea.Areas.LOC_City.Models;
+@using System.Data; 
+@model LOC_CityModel;
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>City Add Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Insert City Details</h5>
+            <form class="row g-3" method="post" asp-area="LOC_City" asp-controller="LOC_City" asp-action="LOC_CityAddFormPage">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CountryID:</label>
+                    <input type="text" id="countryID" name="countryID" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StateID:</label>
+                    <input type="text" id="StateID" name="StateID" class="form-control" required />
+                </div>
+
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CityName:</label>
+                    <input type="text" id="cityName" name="cityName" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">CityCode:</label>
+                    <input type="text" id="cityCode" name="cityCode" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

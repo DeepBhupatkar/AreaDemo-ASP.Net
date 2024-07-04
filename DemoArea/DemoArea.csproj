@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Areas\" />
+    <None Remove="Areas\LOC_Country\" />
+    <None Remove="Areas\LOC_Country\Controllers \" />
+    <None Remove="Areas\LOC_Country\Models\" />
+    <None Remove="Areas\LOC_Country\Views\" />
+    <None Remove="Areas\LOC_Country\Views\LOC_Country\" />
+    <None Remove="Areas\LOC_State\" />
+    <None Remove="Areas\LOC_State\Controllers\" />
+    <None Remove="Areas\LOC_State\Models\" />
+    <None Remove="Areas\LOC_State\Views\" />
+    <None Remove="Areas\LOC_City\" />
+    <None Remove="Areas\LOC_City\Controllers\" />
+    <None Remove="Areas\LOC_City\Models\" />
+    <None Remove="Areas\LOC_City\Views\" />
+    <None Remove="Areas\MST_Branch\" />
+    <None Remove="Areas\MST_Branch\Controllers\" />
+    <None Remove="Areas\MST_Branch\Views\" />
+    <None Remove="Areas\MST_Branch\Models\" />
+    <None Remove="Areas\MST_Student\" />
+    <None Remove="Areas\MST_Student\Controllers\" />
+    <None Remove="Areas\MST_Student\Views\" />
+    <None Remove="Areas\MST_Student\Models\" />
+    <None Remove="Areas\LOC_City\Views\LOC_City\" />
+    <None Remove="Areas\LOC_State\Views\LOC_State\" />
+    <None Remove="Areas\MST_Branch\Views\MST_Branch\" />
+    <None Remove="Areas\MST_Student\Views\MST_Student\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\LOC_Country\" />
+    <Folder Include="Areas\LOC_Country\Controllers \" />
+    <Folder Include="Areas\LOC_Country\Models\" />
+    <Folder Include="Areas\LOC_Country\Views\" />
+    <Folder Include="Areas\LOC_Country\Views\LOC_Country\" />
+    <Folder Include="Areas\LOC_State\" />
+    <Folder Include="Areas\LOC_State\Controllers\" />
+    <Folder Include="Areas\LOC_State\Models\" />
+    <Folder Include="Areas\LOC_State\Views\" />
+    <Folder Include="Areas\LOC_City\" />
+    <Folder Include="Areas\LOC_City\Controllers\" />
+    <Folder Include="Areas\LOC_City\Models\" />
+    <Folder Include="Areas\LOC_City\Views\" />
+    <Folder Include="Areas\MST_Branch\" />
+    <Folder Include="Areas\MST_Branch\Controllers\" />
+    <Folder Include="Areas\MST_Branch\Views\" />
+    <Folder Include="Areas\MST_Branch\Models\" />
+    <Folder Include="Areas\MST_Student\" />
+    <Folder Include="Areas\MST_Student\Controllers\" />
+    <Folder Include="Areas\MST_Student\Views\" />
+    <Folder Include="Areas\MST_Student\Models\" />
+    <Folder Include="Areas\LOC_City\Views\LOC_City\" />
+    <Folder Include="Areas\LOC_State\Views\LOC_State\" />
+    <Folder Include="Areas\MST_Branch\Views\MST_Branch\" />
+    <Folder Include="Areas\MST_Student\Views\MST_Student\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    <PackageReference Include="EnterpriseLibrary.Data.NetCore" Version="6.3.2" />
+  </ItemGroup>
+</Project>

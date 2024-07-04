@@ -1,0 +1,90 @@
+﻿@using DemoArea.Areas.MST_Student.Models;
+@using System.Data;
+@model MST_StudentModel;
+<html>
+<body>
+    <div class="pagetitle">
+        <h1>Student Edit Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Update Student Details</h5>
+
+            <!-- Multi Columns Form -->
+            <form class="row g-3" method="post" asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentUpdateFillFormData">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">BranchID</label>
+                    <input type="text" value="@ViewBag.CountryID" id="branchID" name="branchID" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName6" class="form-label">CityID</label>
+                    <input type="text" value="@ViewBag.CityID" id="cityID" name="cityID" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName7" class="form-label">Student Name</label>
+                    <input type="text" value="@ViewBag.StudentName" id="studentName" name="studentName" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName8" class="form-label">Date of Birth</label>
+                    <input type="text" value="@ViewBag.BirthDate" id="dob" name="dob" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputEmail9" class="form-label">Email</label>
+                    <input type="email" value="@ViewBag.Email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputPassword10" class="form-label">Password</label>
+                    <input type="password" value="@ViewBag.Password" id="password" name="password" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputEmail11" class="form-label">Mobile No. Student</label>
+                    <input type="text" value="@ViewBag.MobileNoStudent" id="mobileNoStudent" name="mobileNoStudent" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputPassword12" class="form-label">Mobile No. Father</label>
+                    <input type="text" value="@ViewBag.MobileNoFather" id="mobileNoFather" name="mobileNoFather" class="form-control" required>
+                </div>
+
+                <label>Address</label>
+                <div class="form-floating">
+                    <input type="text" class="form-control" value="@ViewBag.Address" id="address" name="address" style="height: 100px;" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputAge" class="form-label">Age</label>
+                    <input type="text" value="@ViewBag.Age" id="age" name="age" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputGender" class="form-label">Gender</label>
+                    <input type="text" value="@ViewBag.Gender" id="gender" name="gender" class="form-control" required>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputActive" class="form-label">IsActive</label>
+                    <input type="text" value="@ViewBag.IsActive" id="isActive" name="isActive" class="form-control" required>
+                </div>
+
+                <div>
+                    <input type="hidden" value="@ViewBag.StudentID" name="StudentID" />
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+
+            </form><!-- End Multi Columns Form -->
+
+        </div>
+    </div>
+
+</body>
+</html>

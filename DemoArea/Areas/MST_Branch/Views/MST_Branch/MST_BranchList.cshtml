@@ -1,0 +1,93 @@
+﻿@using DemoArea.Areas.MST_Branch.Models;
+@using System.Data;
+@model DataTable;
+
+
+<html>
+<body>
+    <div class="pagetitle">
+        <h1>Branch List Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Search Branch Details</h5>
+            <form class="row g-3" method="post" asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchSearch">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">BranchName:</label>
+                    <input type="text" id="branchName" name="branchName" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">BranchCode:</label>
+                    <input type="text" id="branchCode" name="branchCode" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="submit" value="Search Branch" class="btn btn-primary" />
+                    <a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchList" class="btn btn-primary">Clear Filter</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between align-items-center">
+                Branch Details
+                <a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchAdd" class="btn btn-success">Add New Branch</a>
+            </h5>
+
+            <!-- Table with hoverable rows -->
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>BranchID</th>
+                        <th>BranchName</th>
+                        <th>BranchCode</th>
+                        <th>Created</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        if (Model.Rows.Count > 0)
+                        {
+                            foreach (DataRow dr in Model.Rows)
+                            {
+                                <tr>
+                                    <td>@dr["BranchID"]</td>
+                                    <td>@dr["BranchName"]</td>
+                                    <td>@dr["BranchCode"]</td>
+                                    <td>@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
+                                    <td>
+                                        <a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchEdit" asp-route-BranchID="@dr["BranchID"]" class="btn btn-primary">Edit</a>
+                                        <a asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchDelete" asp-route-BranchID="@dr["BranchID"]" onclick="return checkDelete();" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <p class="col-form-label">No Records Found!</p>
+                                </td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+            <!-- End Table with hoverable rows -->
+
+        </div>
+    </div>
+
+</body>
+</html></html>

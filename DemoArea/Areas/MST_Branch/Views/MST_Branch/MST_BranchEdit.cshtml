@@ -1,0 +1,38 @@
+﻿@using DemoArea.Areas.MST_Branch.Models;
+@using System.Data;
+@model MST_BranchModel;
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>Branch Edit Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Update Branch Details</h5>
+            <form class="row g-3" method="post" asp-area="MST_Branch" asp-controller="MST_Branch" asp-action="MST_BranchEditFormPage">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">BranchName:</label>
+                    <input value="@ViewBag.BranchName" type="text" id="branchName" name="branchName" class="form-control" required />
+                </div>
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">BranchCode:</label>
+                    <input value="@ViewBag.BranchCode" type="text" id="branchCode" name="branchCode" class="form-control" required />
+                </div>
+
+                <div>
+                    <input type="hidden" name="BranchID" value="@ViewBag.BranchID" />
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

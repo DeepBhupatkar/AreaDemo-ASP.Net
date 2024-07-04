@@ -1,0 +1,109 @@
+﻿@using DemoArea.Areas.MST_Student.Models;
+@using System.Data;
+@model DataTable;
+
+
+<html>
+<body>
+
+    <div class="pagetitle">
+        <h1>Student List Page</h1>
+    </div>
+
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Search Student Details</h5>
+            <form class="row g-3" method="post" asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentSearch">
+
+                <div class="col-md-6">
+                    <label for="inputName5" class="form-label">StudentName:</label>
+                    <input type="text" id="studentName" name="studentName" class="form-control" required>
+                </div>
+
+                <div>
+                    <input type="submit" value="Search Student" class="btn btn-primary" />
+                    <a asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentList" class="btn btn-primary">Clear Filter</a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between align-items-center">
+                Student Details
+                <a asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentAdd" class="btn btn-success">Add New Student</a>
+            </h5>
+           
+                    <!-- Table with hoverable rows -->
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">StudentID</th>
+                                <th scope="col">BranchID</th>
+                                <th scope="col">CityID</th>
+                                <th scope="col">StudentName</th>
+                                <th scope="col">StudentNo.</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">FatherNo.</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">DOB</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">IsActive</th>
+                                <th scope="col">Gender</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Created</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @{
+                                if (Model.Rows.Count > 0)
+                                {
+                                    foreach (DataRow dr in Model.Rows)
+                                    {
+                                        <tr>
+                                            <td>@dr["StudentID"]</td>
+                                            <td>@dr["BranchID"]</td>
+                                            <td>@dr["CityID"]</td>
+                                            <td>@dr["StudentName"]</td>
+                                            <td>@dr["MobileNoStudent"]</td>
+                                            <td>@dr["Email"]</td>
+                                            <td>@dr["MobileNoFather"]</td>
+                                            <td>@dr["Address"]</td>
+                                            <td>@dr["BirthDate"]</td>
+                                            <td>@dr["Age"]</td>
+                                            <td>@dr["IsActive"]</td>
+                                            <td>@dr["Gender"]</td>
+                                            <td>@dr["Password"]</td>
+                                            <td>@Convert.ToDateTime(@dr["Created"]).ToString("dd-MM-yyyy")</td>
+                                            <td>
+                                                <a asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentEdit" asp-route-StudentID="@dr["StudentID"]" class="btn btn-primary">Edit</a>
+                                                <a asp-area="MST_Student" asp-controller="MST_Student" asp-action="MST_StudentDelete" asp-route-StudentID="@dr["StudentID"]" onclick="return checkDelete();" class="btn btn-danger">Delete</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="15" class="text-center">
+                                            <p class="col-form-label">No Records Found!</p>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>
+                    <!-- End Table with hoverable rows -->
+               
+        </div>
+            </div>
+
+</body>
+</html>
